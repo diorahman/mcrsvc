@@ -5,8 +5,7 @@ micro + routes! <3.
 ## example
 
 ```js
-const micro = require('micro');
-const app = require('./');
+const app = require('mcrsvc');
 
 app.router.add('GET', '/hello/:id', async (req, res) => {
   return req.params;
@@ -21,6 +20,7 @@ app.router.add('POST', '/hello/:id', async (req, res) => {
 // $ micro -p 3000
 
 // to make it standalone
+const micro = require('micro');
 micro(app)
   .listen(3000, (err) => {
     if (err) {
