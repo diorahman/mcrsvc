@@ -1,0 +1,29 @@
+{
+  "name": "mcrsvc",
+  "version": "1.0.0",
+  "description": "micro + routes",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava",
+    "start": "micro -p 3000"
+  },
+  "ava": {
+    "require": [
+      "async-to-gen/register"
+    ],
+    "files": [
+      "test/index.js"
+    ]
+  },
+  "author": "Dhi Aurrahman <dio@hooq.tv>",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "0.16.0",
+    "request": "2.78.0",
+    "request-promise": "4.1.1"
+  },
+  "dependencies": {
+    "micro": "6.1.0",
+    "path-match": "1.2.4"
+  }
+}
