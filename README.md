@@ -2,6 +2,11 @@
 
 micro + routes! <3.
 
+## install
+```
+$ npm install mcrsvc --save
+```
+
 ## example
 
 ```js
@@ -19,7 +24,7 @@ app.router.add('POST', '/hello/:id', async (req, res) => {
 // put it in index.js, then
 // $ micro -p 3000
 
-// to make it standalone
+// to make it standalone, you might need babel or async-to-gen.
 const micro = require('micro');
 micro(app)
   .listen(3000, (err) => {

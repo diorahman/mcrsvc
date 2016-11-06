@@ -1,6 +1,6 @@
 {
   "name": "mcrsvc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "micro + routes",
   "main": "index.js",
   "scripts": {
@@ -25,5 +25,16 @@
   "dependencies": {
     "micro": "6.1.0",
     "path-match": "1.2.4"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diorahman/mcrsvc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/diorahman/mcrsvc/issues"
+  },
+  "homepage": "https://github.com/diorahman/mcrsvc#readme"
 }
