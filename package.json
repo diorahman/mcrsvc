@@ -2,10 +2,12 @@
   "name": "mcrsvc",
   "version": "1.0.1",
   "description": "micro + routes",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "ava",
-    "start": "micro -p 3000"
+    "test": "ava --verbose",
+    "start": "micro -p 3000",
+    "prepublish": "npm run build",
+    "build": "mkdir -p dist && async-to-gen index.js > dist/index.js && async-to-gen router.js > dist/router.js"
   },
   "ava": {
     "require": [
@@ -18,13 +20,14 @@
   "author": "Dhi Aurrahman <dio@hooq.tv>",
   "license": "MIT",
   "devDependencies": {
-    "ava": "0.16.0",
+    "async-to-gen": "^1.3.3",
+    "ava": "^0.16.0",
     "request": "2.78.0",
-    "request-promise": "4.1.1"
+    "request-promise": "^4.1.1"
   },
   "dependencies": {
-    "micro": "6.1.0",
-    "path-match": "1.2.4"
+    "micro": "^7.3.3",
+    "path-match": "^1.2.4"
   },
   "directories": {
     "test": "test"

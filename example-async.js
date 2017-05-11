@@ -1,11 +1,14 @@
+// to run this example, you need async-node from async-to-gen
+// or babel-cli
 const micro = require('micro');
 const app = require('./dist');
 
-app.router.add('GET', '/hello', (req, res) => {
-  // some async process
-  return new Promise((resolve) => {
-    setTimeout(() => resolve({'OK': 1}), 100);
-  });
+app.router.add('GET', '/hello/:id', async (req, res) => {
+  return req.params;
+});
+
+app.router.add('POST', '/hello/:id', async (req, res) => {
+  return req.body;
 });
 
 // module.exports = app;

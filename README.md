@@ -12,6 +12,19 @@ $ npm install mcrsvc --save
 ## example
 
 ```js
+// using promise
+const app = require('mcrsvc');
+
+app.router.add('GET', '/hello', (req, res) => {
+  // some async process
+  return new Promise((resolve) => {
+    setTimeout(() => resolve({'OK': 1}), 100);
+  });
+});
+```
+
+
+```js
 const app = require('mcrsvc');
 
 app.router.add('GET', '/hello/:id', async (req, res) => {

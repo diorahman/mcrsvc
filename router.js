@@ -10,6 +10,10 @@ class Router {
     this.add('GET', path, handler);
   }
 
+  post(path, handler) {
+    this.add('GET', path, handler);
+  }
+
   add(method, path, handler) {
     if (typeof method !== 'string') {
       throw new TypeError('`method` is required!');
@@ -47,7 +51,7 @@ class Router {
           req.params = params;
           req.query = query;
 
-          if (['POST', 'PUT'].indexOf(req.method) >= 0 &&
+          if (['POST', 'PUT', 'DELETE', 'PATCH'].indexOf(req.method) >= 0 &&
             req.headers['content-type'].startsWith('application/json') &&
             typeof json === 'function') {
               // we only support json
